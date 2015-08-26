@@ -16,7 +16,7 @@ void utilTestSuite::defineTest3() {
 
 void utilTestSuite::allbutoneTest() {
 	uint32_t v[] = {0x0000FFFF, 0x0000FFFE, 0xFFFFFFEF};
-	verifyEqual((uint32_t)0x00000011,bitwiseAllButOne(3,v));
+	verifyEqual((uint32_t)0x00000011,bitwiseAllButOne<3>(v));
 }
 
 void utilTestSuite::lowbitTest() {
@@ -26,4 +26,9 @@ void utilTestSuite::lowbitTest() {
 	verifyEqual((uint32_t)0x00100000,extractLowBit(v));
 	v = 0x01234ABC;
 	verifyEqual((uint32_t)0x00000004,extractLowBit(v));
+	v = 0x00000000;
+	verifyEqual((uint32_t)0x00000000,extractLowBit(v));
+	v = 0x00000001;
+	verifyEqual((uint32_t)0x00000001,extractLowBit(v));
 }
+

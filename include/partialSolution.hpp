@@ -11,11 +11,6 @@ typedef struct {
 	and the low 16 bits indicate which values are definitely incorrect*/
 	uint32_t state[SUDOKU_GRID_SIZE][SUDOKU_GRID_SIZE];
 	
-	/* Each solution technique has an associated difficulty rating.  The
-	difficulty of a puzzle is the maximum of the difficulty ratings of the
-	techniques required to solve it */
-	int difficultyRating;
-	
 	/* Flag indicating whether the puzzle has a solution */
 	bool feasible;
 	

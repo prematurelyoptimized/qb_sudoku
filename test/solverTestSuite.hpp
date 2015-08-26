@@ -8,7 +8,7 @@ public:
 	solverTestSuite()
 	{
 		TEST_ADD(solverTestSuite::eliminationTest)
-		//TEST_ADD(solverTestSuite::partialEliminationTest)
+		TEST_ADD(solverTestSuite::partialEliminationTest)
 		TEST_ADD(solverTestSuite::branchTest)
 	}
 	

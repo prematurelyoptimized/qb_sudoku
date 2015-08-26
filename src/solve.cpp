@@ -4,7 +4,6 @@
 void display(const partialSolution &sol) {
 	int intSolution[SUDOKU_GRID_SIZE][SUDOKU_GRID_SIZE];
 	toIntArray(sol,intSolution);
-	std::cout << "Difficulty rating: " << sol.difficultyRating << '\n';
 	for(size_t i=0;i<SUDOKU_GRID_SIZE;i++){
 		for(size_t j=0;j<SUDOKU_GRID_SIZE;j++)
 			std::cout << intSolution[i][j] << ", ";

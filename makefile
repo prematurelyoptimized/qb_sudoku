@@ -1,4 +1,4 @@
-MAINSRC := $(wildcard src/lib/*.cpp) 
+MAINSRC := $(wildcard src/lib/*.cpp)
 TESTSRC := $(wildcard test/*.cpp)
 LDFLAGS :=
 LDADD := -lcpptest -Lsrc -Lsrc/lib
@@ -7,7 +7,8 @@ CC := g++
 
 OBJFILES := $(MAINSRC:.cpp=.o)
 TESTOBJ := $(TESTSRC:.cpp=.o)
-DEPFILES := $(MAINSRC:.cpp=.d) $(TESTSRC:.cpp=.d)
+DEPFILES := $(MAINSRC:.cpp=.d) $(TESTSRC:.cpp=.d) $(wildcard src/*.d)
+EXEOBJFILES := $(wildcard src/*.o)
 
 all : hardcode clitool speedtest
 
@@ -24,6 +25,6 @@ speedtest: src/speedtest.o $(OBJFILES)
 	$(LINK.o) -o bin/speedtest $^ $(LDADD)
 	
 clean :
-	-rm -f bin/solve bin/solveSDM bin/speedtest test/run_tests $(OBJFILES) $(TESTOBJ) $(DEPFILES)
+	-rm -f bin/solve bin/solveSDM bin/speedtest test/run_tests $(OBJFILES) $(TESTOBJ) $(DEPFILES) $(EXEOBJFILES)
 	
 -include $(DEPFILES)
