@@ -91,6 +91,7 @@ void solverTestSuite::branchTest() {
 	partialSolution sol = fromIntArray(samplePuzzle);
 	sol = solve(sol);
 	int sampleSolution[SUDOKU_GRID_SIZE][SUDOKU_GRID_SIZE];
+	toIntArray(sol,sampleSolution);
 	
 	verifyEqual(correctAnswer,sampleSolution);
 }
